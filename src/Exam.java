@@ -8,6 +8,7 @@ public class Exam {
         database.addStudent(student1);
         StudentInfo student2 = new StudentInfo("Asath", "123");
         database.addStudent(student2);
+        QuestionBank questionBank=new QuestionBank();
 
         while(true) {
             System.out.println("Enter the operation");
@@ -33,6 +34,8 @@ public class Exam {
                    if (database.check(username, password)) {
                        System.out.println("All the Best");
                        System.out.println("--------------------------------------------");
+                       System.out.println(questionBank.Attenttest(database.data(username,password)));
+
 
 
                    } else {
@@ -43,6 +46,7 @@ public class Exam {
                    }
                }
                case 4->{
+                   questionBank.displayAllQuestion();
                    System.out.println("Thank You");
                    return;
                }
