@@ -14,17 +14,10 @@ public class DataBase {
              }
          }
     }
-    boolean check(String username,String password){
-        for(StudentInfo student:list){
-            if(student.username.equals(username) && student.password.equals(password)){
-                return true;
-            }
-        }
-        return false;
-    }
+
     StudentInfo data(String username,String password){
         for(StudentInfo student:list){
-            if(student.username.equals(username) && student.password.equals(password)){
+            if(student.username.equals(username) && student.getPassword().equals(password)){
                 return student;
             }
         }
