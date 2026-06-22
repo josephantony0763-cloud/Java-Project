@@ -7,6 +7,7 @@ public class StudentInfo {
     private int mark;
     private float percentage;
     private String grade;
+    static int noOfQuestion=10;
 
     public StudentInfo(String username, String password) {
         this.username = username;
@@ -32,22 +33,41 @@ public class StudentInfo {
         grade=calculateGrade(mark);
     }
     float calculatePercentage(int mark){
-        return (float)(mark*100)/5;
+        return (float)(mark*100)/noOfQuestion;
     }
 
     String calculateGrade(int mark){
-        String c[]={"F","B","B+","A","A+"};
-        return c[mark];
+      switch(mark){
+          case 0,1-> {
+              return "F";
+          }
+          case 2,3 -> {
+              return "B+";
+          }
+          case 4,5 ->{
+              return "B";
+          }
+          case 6,7->{
+              return "A";
+          }
+          case 8,9->{
+              return "A+";
+          }
+          case 10 ->{
+              return "O";
+          }
+
+      }
+        return "";
     }
     void display(){
         System.out.println("----------------------------------------------");
         System.out.println("UserName :"+username);
-    //    System.out.println("Password :"+password);
         if(mark==-1) {
             System.out.println("Did not attend the assesment");
             return;
         }
-        System.out.println("Total Question: 5");
+        System.out.println("Total Question: "+noOfQuestion);
         System.out.println("Correct Answer:"+mark);
         System.out.println("Percentage: "+percentage);
         System.out.println("Grade: "+grade);

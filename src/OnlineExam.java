@@ -5,7 +5,7 @@ public class OnlineExam {
         Scanner sc=new Scanner(System.in);
         StudentInfo student1 = new StudentInfo("Antony", "123");
         database.addStudent(student1);
-        StudentInfo student2 = new StudentInfo("Asath", "123");
+        StudentInfo student2 = new StudentInfo("bala", "123");
         database.addStudent(student2);
         QuestionBank questionBank=new QuestionBank();
 
@@ -47,28 +47,12 @@ public class OnlineExam {
                                 case 1 -> {
                                     System.out.println();
                                     System.out.println("---------- Welcome to Online Assesment ----------");
-                                    System.out.println();
-                                    System.out.println("Enter your Username");
-                                    String username1 = sc.nextLine();
-
-                                    System.out.println("Enter your Password");
-                                    String password1 = sc.nextLine();
-
-                                    if (username.equals(username1) && password.equals(password1)) {
-                                        System.out.println("All the Best");
-                                        System.out.println("--------------------------------------------");
-                                        int mark = questionBank.Attenttest(student);
-                                        student.setMark(mark);
-                                        System.out.println("Exam Result");
-                                        student.display();
-
-
-                                    } else {
-                                        System.out.println("Invalid password or username");
-                                        System.out.println("--------------------------------------------");
-                                        System.out.println();
-
-                                    }
+                                    System.out.println("All the Best");
+                                    System.out.println("--------------------------------------------");
+                                    int mark = questionBank.Attenttest(student);
+                                    student.setMark(mark);
+                                    System.out.println("Exam Result");
+                                    student.display();
                                 }
                                 case 2 -> {
                                     student.display();

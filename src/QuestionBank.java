@@ -71,20 +71,19 @@ public class QuestionBank {
         }
     }
     int Attenttest(StudentInfo student){
-        int n=5;
+        Collections.shuffle(questions);
       //  Timer timer=new Timer();
      //   timer.start();
 
         int mark=0;
      //   while(n>0 && !Timer.examFinished){
-        while(n>=0){
-            int q=(int)(Math.random()*10);
-            questions.get(q).display();
+        for(int i=0;i<questions.size();i++){
+
+            questions.get(i).display();
             char useroption=sc.next().charAt(0);
-            if(questions.get(q).corrrectOption==useroption){
+            if(questions.get(i).corrrectOption==useroption) {
                 mark++;
             }
-            n--;
            /* if(n==0){
                 Timer.examFinished=true;
                 timer.interrupt();
